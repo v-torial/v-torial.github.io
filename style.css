@@ -16,9 +16,11 @@
     --navbar-button-color-hover: white;
     --navbar-button-text-color: white;
     --navbar-button-text-color-hover: black;
-    --main-color: rgb(61, 57, 57);
-    --essence-color: #f069a7;
-    --secondary-color: cyan;
+    --card-container-color: #6995b7;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-token-display);
 }
 
 .squada-one-regular {
@@ -89,6 +91,17 @@
 
 .navbar .right-button-content {
     margin-left:auto;
+    font-family: var(--font-token-display);
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: inherit;
+}
+
+.navbar .right-button-content a {
+    color: white;
+    text-decoration: none;
+    font-size: large;
 }
 
 .navbar button-primary {
@@ -153,11 +166,44 @@
 }
 
 .circle-crop {
-    max-width: 350px;
+    max-width: 250px;
     border-radius: 50%;
     object-fit: cover; /* Prevents image distortion */
 }
 
+.card {
+    max-width: 1300px;
+    border-radius: 9px !important;
+}
+
+.chip-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+}
+
+.w3-container {
+    color: white;
+    background-color: var(--card-container-color);
+    border-radius: 0 0 8px 8px;
+}
+
+.w3-title-chips {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.chip {
+    padding: 6px 10px 6px 10px;
+    background-color: white;
+    color: black;
+    font-size: small;
+    border-radius: 16px;
+    width: fit-content;
+}
 
 footer {
     justify-content: center;
