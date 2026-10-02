@@ -1,0 +1,187 @@
+@font-face{
+    font-family: "Nunito Sans", "Squada One";
+    src: url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wdth,wght@6..12,75..125,700&family=Squada+One&display=swap') format("opentype");
+    font-weight: regular;
+    font-display: swap;
+}
+
+:root{
+    --font-token-primary: .nunito-sans-regular;
+    --font-token-display: .squada-one-regular;
+    --text-color: #adadad;
+    --navbar-color: #6995b7;
+    --navbar-text-color: white;
+    --navbar-text-color-hover: #3c586d;
+    --navbar-button-color: #3c586d;
+    --navbar-button-color-hover: white;
+    --navbar-button-text-color: white;
+    --navbar-button-text-color-hover: black;
+    --main-color: rgb(61, 57, 57);
+    --essence-color: #f069a7;
+    --secondary-color: cyan;
+}
+
+.squada-one-regular {
+  font-family: "Squada One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.nunito-sans-regular {
+  font-family: "Nunito Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100,
+    "YTLC" 500;
+}
+
+.nunito-sans-bold {
+  font-family: "Nunito Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 104,
+    "YTLC" 500;
+}
+
+.navbar {
+    z-index: 99;
+    position: fixed;
+    width: stretch;
+    list-style-type: none;
+    align-items: center;
+    margin: 0;
+    padding: 30px !important;
+    overflow: hidden;
+    background-color: var(--navbar-color);
+    display: flex;
+    overflow: visible;
+    gap: 1rem;
+    transition: top 0.3s;
+}
+
+.logo {
+    font-family: var(--font-token-display);
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: xx-large;
+}
+
+.navbar li a {
+    color: var(--navbar-text-color);
+    text-transform: capitalize;
+    text-align: center;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar a:hover {
+    color: var(--navbar-text-color-hover);
+}
+
+.navbar a:hover:not(.active) {
+    color: var(--navbar-text-color-hover);
+}
+
+.navbar .right-button-content {
+    margin-left:auto;
+}
+
+.navbar button-primary {
+    background-color: var(--navbar-button-color);
+    font-family: var(--font-token-display);
+    text-transform: uppercase;
+    border: none;
+    border-radius: 40px;
+    color: var(--navbar-button-text-color);
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: large;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.navbar button-secondary {
+    background-color: transparent;
+    font-family: var(--font-token-display);
+    text-transform: uppercase;
+    border-radius: 40px;
+    color: var(--navbar-button-text-color);
+    box-shadow: inset 0 0 0 2px white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: large;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.navbar button-primary:hover, button-secondary:hover {
+    background-color: var(--navbar-button-color-hover);
+    font-family: var(--font-token-display);
+    text-transform: uppercase;
+    border: none;
+    border-radius: 40px;
+    box-shadow: inset 0 0 0 1px white;
+    color: var(--navbar-button-text-color-hover);
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: large;
+    cursor: pointer;
+}
+
+.navbar .icon {
+    display: none;
+    color: white;
+    top: 27px;
+    right: 21px;
+    position: absolute;
+    margin-left: auto;
+}
+
+.hero-container {
+    min-height: 900px;
+}
+
+.circle-crop {
+    max-width: 350px;
+    border-radius: 50%;
+    object-fit: cover; /* Prevents image distortion */
+}
+
+
+footer {
+    justify-content: center;
+    display: flex;
+    padding-bottom: 30px;
+}
+
+@media screen and (max-width: 800px) {
+    .navbar .right-button-content {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    body:has(.navbar.navbar.responsive){
+        overflow: hidden;
+    }
+
+    .navbar.responsive {
+        display: grid;
+    }
+
+    .navbar .icon {
+        display: contents;
+        color: white;
+    }
+}
